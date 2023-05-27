@@ -15,6 +15,7 @@ public class SavingsAccount extends Account implements InterestEarning{
     public boolean withDraw(double amount) throws InsufficientBalanceException {
         if(amount <= balance){
             balance = balance - amount;
+            addTransaction("withdraw", amount);
             return true;
         }else {
             System.out.println("Insufficient balance");
@@ -25,6 +26,7 @@ public class SavingsAccount extends Account implements InterestEarning{
     @Override
     public void deposit(double amount){
         balance = balance + amount;
+        addTransaction("deposit", amount);
     }
 
     public void addInterest(){

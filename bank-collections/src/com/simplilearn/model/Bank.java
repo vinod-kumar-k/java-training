@@ -1,14 +1,17 @@
 package com.simplilearn.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Bank {
-    private static Customer[] customers;
+    //    private static Customer[] customers;
+    private static List<Customer> customers = new ArrayList<>();
 
     private static int numberOfCustomers;
 
     static {
-        customers = new Customer[10];
+//        customers = new Customer[10];
 
         /*Scanner scanner = new Scanner(System.in);
         System.out.println("Enter starting index: ");
@@ -22,16 +25,17 @@ public class Bank {
     }
 
     public static void addCustomers(String f, String l) {
-        int i = numberOfCustomers++;
+        /*int i = numberOfCustomers++;
         System.out.println("I: " + i);
-        customers[i] = new Customer(f, l);
+        customers[i] = new Customer(f, l);*/
+        customers.add(new Customer(f, l));
     }
 
     public static Customer getCustomer(int customer_index) {
-        return customers[customer_index];
+        return customers.get(customer_index);
     }
 
     public static int getNumberOfCustomers(){
-        return numberOfCustomers;
+        return customers.size();
     }
 }

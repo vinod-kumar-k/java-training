@@ -23,9 +23,11 @@ public class CheckingAccount extends Account{
             }else{
                 overdraftAmount -= overDraftNeeded;
                 balance = 0.0;
+                addTransaction("withdraw", overDraftNeeded);
             }
         }else {
             balance -= amount;
+            addTransaction("withdraw", amount);
         }
 
         return result;
@@ -33,5 +35,6 @@ public class CheckingAccount extends Account{
 
     public void deposit(double amount){
         balance = balance + amount;
+        addTransaction("deposit", amount);
     }
 }
