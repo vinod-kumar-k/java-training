@@ -1,0 +1,31 @@
+package com.simplilearn.client;
+
+public class PrimitiveArray {
+
+    public static char[] createArray(){
+        char[] s;
+
+        s = new char[26];
+
+        for (int i = 0; i < 26; i++){
+            s[i] = (char) ('A' + i);
+        }
+
+        return s;
+    }
+
+    public static void main(String[] args) {
+        char[] characters = createArray();
+        printElements(characters);
+    }
+
+    private static void printElements(char[] elements){
+        /*for (int i = 0; i < elements.length; i++){
+            System.out.println(elements[i]);
+        }*/
+
+        for (char element : elements){
+            System.out.println(element);
+        }
+    }
+}
