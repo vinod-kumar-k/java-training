@@ -14,7 +14,6 @@ public class TransactionTask implements Runnable {
         this.scanner = new Scanner(System.in);
     }
 
-
     @Override
     public void run() {
         try {
